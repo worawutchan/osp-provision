@@ -1,0 +1,21 @@
+# Deletes an instance via its ID
+- name: remove an instance
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: remove an instance app1
+      os_server:
+        name: app1
+        state: absent
+    - name: remove an instance app2
+      os_server:
+        name: app2
+        state: absent
+    - name: remove an instance db
+      os_server:
+        name: db
+        state: absent
+    - name: remove an instance frontend
+      os_server:
+        name: frontend
+        state: absent

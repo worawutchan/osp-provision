@@ -1,0 +1,15 @@
+- name: Deploy an instances
+  os_server: 
+    state: present 
+    name: "{{item.value.name}}" 
+    image: "rhel-guest"
+    key_name: ansible_ssh
+    wait: yes
+    flavor: m2.small
+    network: int_network
+    floating_ip_pools: ext_network
+    security_groups: "{{item.value.securitygroup}}"
+    meta:
+      group: "{{item.value.metagroup}}"
+      deployment_name: QA
+  loop: "{{ server_info | dict2items }}"

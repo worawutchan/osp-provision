@@ -1,0 +1,19 @@
+---
+# vars file for os_provision
+server_info: 
+  app1: 
+    name: app1
+    securitygroup: apps
+    metagroup: apps
+  app2:
+    name: app2
+    securitygroup: apps
+    metagroup: apps
+  db:
+    name: db
+    securitygroup: db
+    metagroup: appdbs
+  frontend:
+    name: frontend
+    securitygroup: frontend
+    metagroup: frontends
